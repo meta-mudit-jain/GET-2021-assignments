@@ -10,9 +10,9 @@ public class FCFS {
     private int noOfProcess =0;
     private final int noOfTimes=2;
     private int[][] process;
-    private int[] completionTime;
-    private int[] turnAroundTime;
-    private int[] waitingTime;
+    private int[] completionTime; //array to store completion time of processes
+    private int[] turnAroundTime; //array to store turnaroundtime time of processes
+    private int[] waitingTime;    //array to store waiting time of processes
     Scanner sc = new Scanner(System.in);
 
     /**
@@ -43,7 +43,7 @@ public class FCFS {
         }
 
     }
-
+    //display times of processes
     private void getOutput(String s, int []arr){
         System.out.println();
         System.out.println(s+" Time of processes are:");

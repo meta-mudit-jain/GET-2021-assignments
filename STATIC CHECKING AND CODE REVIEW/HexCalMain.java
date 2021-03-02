@@ -18,20 +18,44 @@ import java.util.Scanner;
     Return the hexadecimal representation of decimal number.
 */
 class HexCal {
-
+    /**
+     * converts hexadecimal to decimal
+     * @param s is hexadecimal no as string
+     * @return convertedNum the converted no
+     */
     public int convertIntoDecimal(String s){
         int convertedNum=Integer.parseInt(s,16);
         return convertedNum;
     }
+
+    /**
+     * convert decimal into hexadecimal
+     * @param i is decimal no
+     * @return converted hexadecimal no
+     */
     public String convertIntoHexadecimal(int i){
         return Integer.toHexString(i).toUpperCase();
 
     }
+
+    /**
+     * add to hexadecimal no
+     * @param s1 is 1st hexadecimal no
+     * @param s2 is 2nd hexadecimal no
+     * @return hex which is sum
+     */
     public String addHex(String s1,String s2 ){
         int sumResult = convertIntoDecimal(s1)+convertIntoDecimal(s2);
         String hex = Integer.toHexString(sumResult).toUpperCase();
         return hex;
     }
+
+    /**
+     * subtract hexadecimal no
+     * @param s1 is 1st hexadecimal no
+     * @param s2 is 2nd hexadecimal no
+     * @return subtraction of hexadecimal no
+     */
     public String subtractHex(String s1,String s2 ){
         int num1 = convertIntoDecimal(s1);
         int num2 = convertIntoDecimal(s2);
@@ -40,27 +64,63 @@ class HexCal {
         else
             return Integer.toHexString(num2-num1).toUpperCase();
     }
+
+    /**
+     * function to multiply hexadecimal no
+     * @param s1 is 1st hexadecimal no
+     * @param s2 is 2nd hexadecimal no
+     * @return hex is multiplication  of hexadecimal no
+     */
     public String multiplyHex(String s1,String s2 ){
         int mulResult = convertIntoDecimal(s1)*convertIntoDecimal(s2);
         String hex = Integer.toHexString(mulResult).toUpperCase();
         return hex;
     }
+
+    /**
+     * divison of hex no
+     * @param s1 is 1st hexadecimal no
+     * @param s2 is 2nd hexadecimal no
+     * @return hex which is division of hexadecimal no
+     */
     public String divideHex(String s1,String s2 ){
         int divResult = convertIntoDecimal(s1)/convertIntoDecimal(s2);
         String hex = Integer.toHexString(divResult).toUpperCase();
         return hex;
     }
+
+    /**
+     * compares to hexadecimal no
+     * @param s1 1st hexadecimal no
+     * @param s2 2nd hexadecimal no
+     * @return bool type value
+     */
     public boolean isEqual(String s1,String s2){
         return  s1.compareToIgnoreCase(s2)==0?true:false ;
     }
+
+    /**
+     * check if 1st hexadecimal no is greater
+     * @param s1 is 1st hexadecimal no
+     * @param s2 is 2nd hexadecimal no
+     * @return bool type value
+     */
     public boolean isGreater(String s1,String s2){
         return  s1.compareToIgnoreCase(s2)>0?true:false ;
     }
+
+    /**
+     * check if 1st hexadecimal no is smaller
+     * @param s1 is 1st hexadecimal no
+     * @param s2 is 2nd hexadecimal no
+     * @return bool type value
+     */
     public boolean isSmaller(String s1,String s2){
         return  s1.compareToIgnoreCase(s2)<0?true:false ;
     }
 
 }
+//HexCalMain is class which contains main function
 public class HexCalMain {
     public static void main(String[] args) {
         HexCal obj = new HexCal();

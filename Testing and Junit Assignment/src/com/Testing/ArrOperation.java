@@ -120,55 +120,55 @@ public class ArrOperation {
     /**
      * Rearrange the array as x is followed by y.
      *
-     * @param nums, array to perform operation
+     * @param arr, array to perform operation
      * @param x,    x is such that each x should be followed by y can't be moved
      * @param y,    should be present after each x can be moved
      *              Throw AssertionError if array is empty
      * @return nums as rearranged array
      */
-    public static int[] fixXY(int[] nums, int x, int y) {
-
-
-        if (nums.length == 0) {
-            System.out.print("Array is Empty");
-        } else if (nums[nums.length - 1] == x) {
-            throw new AssertionError("X occurs at the last index of the array");
-        } else {
-            for (int i = 0; i < nums.length - 1; i++) {
-                if (nums[i] == x && nums[i + 1] == x) {
-                    throw new AssertionError("two adjacents X values are there");
-                }
+    public static int[] fixXY(int[] arr,int x,int y){
+        try {
+            if(arr.length==0){
+                throw new AssertionError("Empty array");
+            }else if (arr[arr.length-1]==x) {
+                throw new AssertionError("X occurs at the last index of the array");
             }
-            int count_x = 0, count_y = 0;
-            for (int i = 0; i < nums.length; i++) {
-                if (nums[i] == x) {
-                    count_x++;
+            else{
+                for (int i = 0; i < arr.length-1; i++) {
+                    if(arr[i]==x && arr[i+1]==x){
+                        throw new AssertionError("two adjacents X values are there");
+                    }
                 }
-                if (nums[i] == y) {
-                    count_y++;
+                int count_x=0,count_y=0;
+                for (int i = 0; i < arr.length; i++) {
+                    if(arr[i]==x){
+                        count_x++;
+                    }
+                    if (arr[i]==y) {
+                        count_y++;
+                    }
                 }
-            }
-            if (count_x != count_y) {
-                throw new AssertionError("there are unequal numbers of X and Y");
-            }
-            for (int i = 0; i < nums.length; i++) {
-                if (nums[i] == y && i == 0 || nums[i] == y && nums[i - 1] != x) {
-                    int posy = i;
-                    for (int j = 0; j < nums.length; j++) {
-                        if (nums[j] == x && nums[j + 1] != y) {
-                            int temp = nums[j + 1];
-                            nums[j + 1] = y;
-                            nums[posy] = temp;
+                if(count_x!=count_y){
+                    throw new AssertionError("there are unequal numbers of X and Y");
+                }
+                for (int i = 0; i < arr.length; i++) {
+                    if(arr[i]==y){
+                        for (int j = 0; j < arr.length; j++) {
+                            if(arr[j]==x && arr[j+1]!=y && j!=arr.length-1){
+                                int temp=arr[i];
+                                arr[i]=arr[j+1];
+                                arr[j+1]=temp;
+                            }
                         }
-                        break;
                     }
                 }
             }
-
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
-
-        return nums;
+        return arr;
     }
+
 
     public static void main(String[] args) {
         int exitCode = 0;

@@ -1,0 +1,13 @@
+    private void insert(int r, int c, int val)       O(length)
+
+    private void print()                            O(length)
+
+    private static boolean isSymmetric(SparseMtrx s1) O(length)
+
+    private void addSparse(SparseMtrx obj)          O(length)
+
+    private SparseMtrx transpose()                  O(col+length)
+
+    private void multiplySparse(SparseMtrx obj)     O(length1*col1+length2*col2)
+
+    

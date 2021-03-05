@@ -5,7 +5,7 @@ import java.util.Scanner;
 public final class SparseMtrx {
     private final int max = 100;
     private final int arr[][] = new int[max][3];
-    private finalint row, col;
+    private final int row, col;
     private int length;
     static Scanner scan = new Scanner(System.in);
 

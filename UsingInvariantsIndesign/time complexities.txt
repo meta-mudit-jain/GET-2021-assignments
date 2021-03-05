@@ -1,13 +1,22 @@
-    private void insert(int r, int c, int val)       O(length)
 
-    private void print()                            O(length)
+	TIME COLPEXITIES
+	N=length is no of non-zero values in matrix
+	X= no of columns in the matrix having non zero values
+	N1=no of non-zero values in matrix 1
+	N2=no of non-zero values in matrix2
+	X1=no of columns having non zero values in matrix 1
+	X2=no of columns having non zero values in matrix 2
+-------------------------------------------------------------------------------------------------------------
+    private void insert(int r, int c, int val)        O(N)
 
-    private static boolean isSymmetric(SparseMtrx s1) O(length)
+    private void print()                              O(N)
 
-    private void addSparse(SparseMtrx obj)          O(length)
+    private static boolean isSymmetric(SparseMtrx s1) O(N)
 
-    private SparseMtrx transpose()                  O(col+length)
+    private void addSparse(SparseMtrx obj)            O(N)
 
-    private void multiplySparse(SparseMtrx obj)     O(length1*col1+length2*col2)
+    private SparseMtrx transpose()                    O(X+N)
+ 
+    private void multiplySparse(SparseMtrx obj)       O(X1*N1+X2*N2)
 
     

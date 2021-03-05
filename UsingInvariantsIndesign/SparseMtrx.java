@@ -2,10 +2,10 @@ package com.SparseMatrix;
 
 import java.util.Scanner;
 // sparse matrix java class
-public class SparseMtrx {
-    private int max = 100;
-    private int arr[][] = new int[max][3];
-    private int row, col;
+public final class SparseMtrx {
+    private final int max = 100;
+    private final int arr[][] = new int[max][3];
+    private finalint row, col;
     private int length;
     static Scanner scan = new Scanner(System.in);
 
